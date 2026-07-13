@@ -36,6 +36,16 @@ npm run dev
 npm run test:concurrency
 ```
 
+API documentation
+
+- Open the interactive API docs in your browser after starting the server:
+
+```bash
+http://localhost:3000/api
+```
+
+- This Swagger UI page lets you execute requests directly from the browser.
+
 Key endpoints (curl)
 
 - Register/update driver location:
@@ -53,7 +63,15 @@ curl -X POST http://localhost:3000/rides -H 'Content-Type: application/json' -d 
 - Driver accepts a ride:
 
 ```bash
-curl -X POST http://localhost:3000/rides/<rideId>/accept -H 'Content-Type: application/json' -d '{"driverId":"d1"}'
+curl -X POST http://localhost:3000/rides/<rideId>/accept \
+  -H 'Content-Type: application/json' \
+  -d '{"driverId":"d1"}'
+```
+
+- Fetch ride status:
+
+```bash
+curl http://localhost:3000/rides/<rideId>
 ```
 
 Design notes
